@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sushmita - First Year CSIT Student Portfolio">
+<title>Sushmita | CSIT Student Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Segoe UI',sans-serif;
+}
+
+:root{
+    --bg:#f4f7ff;
+    --text:#222;
+    --card:#ffffff;
+    --primary:#4f46e5;
+    --secondary:#7c3aed;
+}
+
+.dark{
+    --bg:#0f172a;
+    --text:#ffffff;
+    --card:#1e293b;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:.4s;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:var(--card);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
+}
+
+.toggle-btn{
+    padding:8px 15px;
+    border:none;
+    background:var(--primary);
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    padding:50px 8%;
+}
+
+.hero-text h1{
+    font-size:50px;
+}
+
+.hero-text span{
+    color:var(--primary);
+}
+
+.hero-text p{
+    margin:20px 0;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    margin-right:10px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.btn:hover{
+    background:var(--secondary);
+}
+
+.profile{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:var(--primary);
+}
+
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    margin-bottom:20px;
+}
+
+.skills-grid,
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
+}
+
+.resume-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.contact-form button{
+    padding:12px;
+    border:none;
+    background:var(--primary);
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:var(--card);
+}
+
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Sushmita</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Mode</button>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Sushmita</span></h1>
+        <h2>First-Year CSIT Student</h2>
+
+        <p>
+            Passionate about technology, programming, software development,
+            artificial intelligence, and cybersecurity. Continuously learning
+            and building projects to improve my technical skills.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn">Contact Me</a>
+    </div>
+
+    <div class="profile">
+        Your Photo
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+        <p>
+            I am Sushmita, a First-Year Computer Science and Information
+            Technology (CSIT) student. I am enthusiastic about software
+            development, AI, cybersecurity, and web technologies.
+        </p>
+        <br>
+        <p>
+            Career Goal: To become a skilled Software Engineer and contribute
+            to innovative technology solutions.
+        </p>
+        <br>
+        <p>
+            Hobbies: Coding, Learning New Technologies, Reading,
+            Problem Solving, and Exploring AI.
+        </p>
+    </div>
+</section>
+
+<section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+        <h3>First Year CSIT</h3>
+        <p>Current Semester Student</p>
+
+        <br>
+
+        <h4>Subjects Studied:</h4>
+        <ul>
+            <li>Programming in C</li>
+            <li>Data Structures</li>
+            <li>Digital Electronics</li>
+            <li>Mathematics</li>
+            <li>Python Programming</li>
+        </ul>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="card">
+            <h3>Programming</h3>
+            <p>C, Python, Java (Learning)</p>
+        </div>
+
+        <div class="card">
+            <h3>Web Technologies</h3>
+            <p>HTML, CSS, JavaScript</p>
+        </div>
+
+        <div class="card">
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code</p>
+        </div>
+
+        <div class="card">
+            <h3>Soft Skills</h3>
+            <p>Problem Solving, Teamwork, Communication</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project">
+            <h3>2D Graphics Editor in C</h3>
+            <p>
+                Developed a graphics editor using C language to draw shapes
+                such as lines, rectangles, circles and triangles.
+            </p>
+            <br>
+            <a href="#">GitHub Link</a>
+        </div>
+
+        <div class="project">
+            <h3>Heart Disease Prediction</h3>
+            <p>
+                Machine Learning project using Python to predict heart disease
+                based on patient data.
+            </p>
+            <br>
+            <a href="#">GitHub Link</a>
+        </div>
+
+        <div class="project">
+            <h3>Mini Programming Projects</h3>
+            <p>
+                Collection of beginner programming projects created during
+                CSIT learning journey.
+            </p>
+            <br>
+            <a href="#">GitHub Link</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="achievements">
+    <h2 class="section-title">Achievements & Certifications</h2>
+
+    <div class="card">
+        <ul>
+            <li>Academic Excellence</li>
+            <li>Online Programming Courses</li>
+            <li>Python Certifications</li>
+            <li>Workshops & Hackathons Participation</li>
+        </ul>
+    </div>
+</section>
+
+<section id="resume">
+    <h2 class="section-title">Resume</h2>
+
+    <div class="card">
+        <p>Download and view my latest resume.</p>
+        <br>
+        <a href="#" class="resume-btn">Download Resume</a>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <form class="contact-form">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+    <br>
+
+    <p>Email: sushmita@example.com</p>
+    <p>LinkedIn: linkedin.com/in/sushmita</p>
+    <p>GitHub: github.com/sushmitaalur07-gif</p>
+</section>
+
+<footer>
+    <p>© 2026 Sushmita | CSIT Student Portfolio</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
